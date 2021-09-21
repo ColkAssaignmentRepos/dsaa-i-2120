@@ -105,8 +105,8 @@ void release(void) {
 
 
 void push(stack *s, int n) {
-    s->data=n;
-    s->next=head;
+    s->data = n;
+    s->next = head;
 
     head = s;
 }
@@ -118,7 +118,7 @@ int pop(void) {
 
     s = head;
 
-    n = s-> data;
+    n = s->data;
     head = s->next;
     free(s);
 
