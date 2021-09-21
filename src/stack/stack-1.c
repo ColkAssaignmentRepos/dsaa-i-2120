@@ -33,7 +33,7 @@ int main(void) {
                 add();
                 break;
             case 2:
-                delete():
+                delete();
                 break;
             case 3:
                 display();
@@ -73,7 +73,7 @@ void add(void) { /*データ追加 */
     printf("整数を入力してください.\n");
     scanf("%d", &n);
     push(n);
-    printf("%d追加しました.\n", n);
+    printf("追加しました: %d\n", n);
 }
 
 
@@ -81,19 +81,17 @@ void delete(void) { /* データ削除 */
     if (isEmpty()) {
         return;
     }
-    printf("%dを取り出しました.\n", pop());
+    printf("取り出しました: %d\n", pop());
 }
 
 
 void push(int n) { /* データ追加 */
-    // TODO: Fill (ア)
-    // stack[__(ア)__] = n;
+    stack[sp++] = n;
 }
 
 
-void pop(void) { /* データ取り出し */
-    // TODO: Fill (イ)
-    // return (stack[__(イ)__]);
+int pop(void) { /* データ取り出し */
+    return (stack[--sp]);
 }
 
 
@@ -112,7 +110,7 @@ int isFull(void) {
 int isEmpty(void) {
     if (sp <= 0) {
         printf("スタックは空です.\n");
-        return 1:
+        return 1;
     }
     return 0;
 }
