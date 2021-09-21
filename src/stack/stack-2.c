@@ -11,7 +11,7 @@ void add(void); /* データ追加 */
 void delete(void); /* データ削除 */
 void display(void); /* データ表示 */
 void release(void); /* データ開放 */
-void push(int n); /* データ追加 */
+void push(stack *s, int n); /* データ追加 */
 int pop(void); /* データ取り出し */
 
 stack *head;
@@ -35,7 +35,7 @@ int main(void) {
                 add();
                 break;
             case 2:
-                delete():
+                delete();
                 break;
             case 3:
                 display();
@@ -66,12 +66,12 @@ void add(void) {
     printf("整数を入力してください.\n");
     scanf("%d", &n);
     push(s, n);
-    printf("%d追加しました.\n", n);
+    printf("追加しました: %d\n", n);
 }
 
 
 void delete(void) {
-    printf("%dを取り出しました.\n", pop());
+    printf("取り出しました: %d\n", pop());
 }
 
 
@@ -104,23 +104,22 @@ void release(void) {
 }
 
 
-void push(int n) {
-    // TODO: Fill (ア) and (イ)
-    // s->data=__(ア)__;
-    // s->next=__(イ)__;
+void push(stack *s, int n) {
+    s->data=n;
+    s->next=head;
+
     head = s;
 }
 
 
-void pop(void) {
+int pop(void) {
     stack *s;
     int n;
 
     s = head;
 
-    // TODO: Fill (ウ) and (エ)
-    // n = __(ウ)__;
-    // head = __(エ)__;
+    n = s-> data;
+    head = s->next;
     free(s);
 
     return n;
