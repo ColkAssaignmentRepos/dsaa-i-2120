@@ -43,6 +43,7 @@ int main() {
 
     if (found_index != LIST_LENGTH - 1) {
         printf("'%s' is located at the index: %d\n", query, found_index + 1);
+        printf("%s %d\n", list[found_index].name, list[found_index].age);
     } else {
         printf("NO SUCH PERSON FOUND IN THE LIST!\n");
     }
