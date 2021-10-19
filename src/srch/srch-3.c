@@ -19,9 +19,11 @@ int search(const int a[], int n, int key) {
     }
 
     if (i == (n - 1)) {
+        free(searching);
         return -1;
     }
 
+    free(searching);
     return i;
 }
 

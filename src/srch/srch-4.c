@@ -15,14 +15,17 @@ int search(const int a[], int n, int key) {
 
     for (int i = 0; i < n; i++) {
         if (i == (n - 1)) {
+            free(searching);
             return -1;
         }
 
         if (searching[i] == key) {
+            free(searching);
             return i;
         }
     }
 
+    free(searching);
     return -1;
 }
 
